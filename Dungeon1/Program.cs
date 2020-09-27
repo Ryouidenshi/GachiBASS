@@ -38,12 +38,9 @@ namespace Dungeon1
 
         static long MeasureTime(int[] array, Func<int[], int, int> searchProcedure)
         {
-            searchProcedure(array, array[random.Next(array.Length)]);
-            var repetitions = 10000;
             var watch = new Stopwatch();
             watch.Start();
-            for (int i = 0; i < repetitions; i++)
-                searchProcedure(array, array[random.Next(array.Length)]);
+            searchProcedure(array, array[random.Next(array.Length)]);
             watch.Stop();
             return watch.ElapsedMilliseconds;
         }
