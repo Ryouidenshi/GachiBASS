@@ -1,0 +1,6 @@
+C:\Users\Алексей\Documents\Visual Studio Projects\Ryouidenshi\GachiBASS\Dungeon1\obj\Debug\Dungeon1.csprojAssemblyReference.cache
+C:\Users\Алексей\Documents\Visual Studio Projects\Ryouidenshi\GachiBASS\Dungeon1\bin\Debug\Dungeon1.exe.config
+C:\Users\Алексей\Documents\Visual Studio Projects\Ryouidenshi\GachiBASS\Dungeon1\bin\Debug\Dungeon1.exe
+C:\Users\Алексей\Documents\Visual Studio Projects\Ryouidenshi\GachiBASS\Dungeon1\bin\Debug\Dungeon1.pdb
+C:\Users\Алексей\Documents\Visual Studio Projects\Ryouidenshi\GachiBASS\Dungeon1\obj\Debug\Dungeon1.exe
+C:\Users\Алексей\Documents\Visual Studio Projects\Ryouidenshi\GachiBASS\Dungeon1\obj\Debug\Dungeon1.pdb

@@ -43,6 +43,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ActionTimeMeasurer.cs" />
+    <Compile Include="ArrayExtensions.cs" />
+    <Compile Include="ArrayGenerator.cs" />
+    <Compile Include="ConsoleView.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
