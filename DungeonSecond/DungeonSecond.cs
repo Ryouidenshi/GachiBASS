@@ -76,13 +76,20 @@ namespace DungeonFirst
 
         static int[] SearchUniqueElementsOwn(int[] a)
         {
-            Dictionary<int, int> unique = new Dictionary<int, int>();
-            foreach (var element in a)
+            int[] uniArr = new int[a.Length];
+            bool unique = true;
+            for (int i = 0; i < a.Length; i++)
             {
-                unique.TryGetValue(element, out var count);
-                unique[element] = ++count;
+                for (int j = 0; j < uniArr.Length; j++)
+                {
+                    if (a[i] == uniArr[j])
+                        unique = false;
+                }
+                if (unique)
+                    uniArr[i] = a[i];
+                unique = true;
             }
-            return unique.Keys.ToArray();
+            return uniArr;
         }
 
         static int[] SearchUniqueElementsFromLibrary(int[] a)
