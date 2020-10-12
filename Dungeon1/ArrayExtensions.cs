@@ -43,7 +43,7 @@ namespace Dungeon1
 
         public static int[] SearchUnique(this int[] array)
         {
-            //return array.Distinct().Count();
+            //return array.Distinct().ToArray();
             int[] uniArr = new int[array.Length];
             bool unique = true;
             for (int i = 0; i < array.Length; i++)
@@ -59,7 +59,5 @@ namespace Dungeon1
             }
             return uniArr;
         }
-
-
     }
 }
