@@ -41,10 +41,12 @@ namespace Dungeon1
                     ActionTimeMeasurer.Measure(new Action(() =>
                     array.HoareSort())));
 
+                array = ArrayGenerator.GenerateArray(i);
                 Console.WriteLine("Линейный пожилой поиск " + ", время выполнения - " +
                     ActionTimeMeasurer.Measure(new Action(() =>
                     array.LinearSearch(rnd.Next(10000)))));
 
+                array = ArrayGenerator.GenerateArray(i);
                 Console.WriteLine("Поиск уникального элемента " + ", время выполнения - " +
                     ActionTimeMeasurer.Measure(new Action(() =>
                     array.SearchUnique())));
