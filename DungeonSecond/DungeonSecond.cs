@@ -40,6 +40,7 @@ namespace DungeonFirst
         static Random random = new Random();
         static long MeasureTime(int[] array, Func<int[],int[]> searchProcedure)
         {
+            //pizdec
             var watch = new Stopwatch();
             watch.Start();
             searchProcedure(array);
