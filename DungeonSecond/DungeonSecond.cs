@@ -10,25 +10,62 @@ namespace DungeonFirst
     {
         static void Main(string[] args)
         {
-            while (true)
+            int[] arrayLengths = new int[] { 10000, 50000, 100000 };
+            foreach (int i in arrayLengths)
             {
-                Console.WriteLine("Введите количество элементов в массиве - ");
-                var num = int.Parse(Console.ReadLine());
-                if (num==0)
-                    break;
-                Console.WriteLine("-------------------------------------");
-                int[] array = GenerateSortedArray(num);
-                long fastSortOwn = MeasureTime(array, FastSortOwn);
-                long fastSortFromLibrary = MeasureTime(array, FastSortFromLibrary);
-                long searchUniqueElementsOwn = MeasureTime(array, SearchUniqueElementsOwn);
-                long searchUniqueElementsFromLibrary = MeasureTime(array, SearchUniqueElementsFromLibrary);
-                Console.WriteLine("Быстрый поиск собственной реализации - " + fastSortOwn);
-                Console.WriteLine("Быстрый поиск готовой реализации - " + fastSortFromLibrary);
-                Console.WriteLine("Поиск уникальных слов собственной реализации - " + searchUniqueElementsOwn);
-                Console.WriteLine("Поиск уникальных слов готовой реализации - " + searchUniqueElementsFromLibrary);
-                Console.WriteLine("-------------------------------------");
+                Console.WriteLine("Количество элементов в массиве - " + i);
+                int[] array;
+                int[] results;
+
+                results = new int[100];
+                for (int j = 0; j < 100; j++)
+                {
+                    array = GenerateArray(i);
+                    results[j] = MeasureTime(array, FastSortOwn);
+                }
+                Console.WriteLine("Быстрый поиск собственной реализации (лучший случай) - " + results.Min());
+                Console.WriteLine("Быстрый поиск собственной реализации (средний) - " + results.Average());
+                Console.WriteLine("Быстрый поиск собственной реализации (худший) - " + results.Max());
+                GC.Collect();
+
+                results = new int[100];
+                for (int j = 0; j < 100; j++)
+                {
+                    array = GenerateArray(i);
+                    results[j] = MeasureTime(array, FastSortFromLibrary);
+                }
+                Console.WriteLine("Быстрый поиск готовой реализации (лучший случай) - " + results.Min());
+                Console.WriteLine("Быстрый поиск готовой реализации (средний) - " + results.Average());
+                Console.WriteLine("Быстрый поиск готовой реализации (худший) - " + results.Max());
+                GC.Collect();
+
+                results = new int[100];
+                for (int j = 0; j < 100; j++)
+                {
+                    array = GenerateArray(i);
+                    results[j] = MeasureTime(array, SearchUniqueElementsOwn);
+                }
+                Console.WriteLine("Поиск уникальных слов собственной реализации (лучший случай) - " + results.Min());
+                Console.WriteLine("Поиск уникальных слов собственной реализации (средний) - " + results.Average());
+                Console.WriteLine("Поиск уникальных слов собственной реализации (худший) - " + results.Max());
+                GC.Collect();
+
+                results = new int[100];
+                for (int j = 0; j < 100; j++)
+                {
+                    array = GenerateArray(i);
+                    results[j] = MeasureTime(array, SearchUniqueElementsFromLibrary);
+                }
+                Console.WriteLine("Поиск уникальных слов готовой реализации (лучший случай) - " + results.Min());
+                Console.WriteLine("Поиск уникальных слов готовой реализации (средний) - " + results.Average());
+                Console.WriteLine("Поиск уникальных слов готовой реализации (худший) - " + results.Max());
+                GC.Collect();
+
+                Console.WriteLine();
             }
+            Console.ReadKey();
         }
+        
         static int[] GenerateSortedArray(int length)
         {
             var array = new int[length];
