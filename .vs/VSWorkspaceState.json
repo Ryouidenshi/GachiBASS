@@ -2,8 +2,9 @@
   "ExpandedNodes": [
     "",
     "\\Dungeon1",
-    "\\DungeonSecond"
+    "\\DungeonSecond",
+    "\\DungeonSecond\\bin"
   ],
-  "SelectedNode": "\\Dungeon1",
+  "SelectedNode": "\\DungeonSecond\\DungeonSecond.cs",
   "PreviewInSolutionExplorer": false
 }
